@@ -4,7 +4,7 @@
 .app-header {
     background: linear-gradient(90deg, $primary-dark, $primary-color) !important;
     box-shadow: 0 5px 10px $shadow-medium;
-    height: $header-height;
+    min-height: $header-height;
     display: flex;
     align-items: center;
 
@@ -55,9 +55,12 @@
         }
     }
 
-    @media (max-width: 600px) {
-        &__title {
-            font-size: 1.5rem;
+    @media (max-width: 567px) {
+        &__toolbar {
+            width: calc(100% - 40px);
+            padding: 5px math.div($padding-base, 2) * 3;
+            display: flex;
+            flex-direction: column;
         }
 
         &__auth-controls {
@@ -68,7 +71,7 @@
             }
 
             .app-header__button {
-                padding: 5px 10px;
+                padding: 5px;
             }
         }
     }
