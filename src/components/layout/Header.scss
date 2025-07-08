@@ -1,0 +1,75 @@
+@use "../../styles/var" as *;
+@use "sass:math";
+
+.app-header {
+    background: linear-gradient(90deg, $primary-dark, $primary-color) !important;
+    box-shadow: 0 5px 10px $shadow-medium;
+    height: $header-height;
+    display: flex;
+    align-items: center;
+
+    &__toolbar {
+        width: calc(100% - 100px);
+        margin: 0 auto;
+        padding: 0 math.div($padding-base, 2) * 3;
+        min-height: $header-height !important;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        color: $text-color-light;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        font-size: 1.5rem;
+        text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+
+        .MuiSvgIcon-root {
+            font-size: 1.8em;
+            vertical-align: middle;
+        }
+    }
+
+    &__auth-controls {
+        display: flex;
+        align-items: center;
+        gap: $padding-base;
+
+        .app-header__username {
+            color: $text-color-light;
+            font-weight: 500;
+            margin-right: math.div($padding-base, 2);
+        }
+
+        .app-header__button {
+            color: $text-color-light;
+            border: 2px solid rgba($text-color-light, 0.5);
+            border-radius: $border-radius-base;
+            padding: 10px 15px;
+            transition: background-color $transition-speed-fast ease-in-out, border-color $transition-speed-fast ease-in-out;
+
+            &:hover {
+                background-color: rgba($text-color-light, 0.1);
+                border-color: $text-color-light;
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+        &__title {
+            font-size: 1.5rem;
+        }
+
+        &__auth-controls {
+            gap: math.div($padding-base, 2);
+
+            .app-header__username {
+                display: none;
+            }
+
+            .app-header__button {
+                padding: 5px 10px;
+            }
+        }
+    }
+}

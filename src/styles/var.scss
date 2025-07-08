@@ -1,0 +1,31 @@
+$primary-color: rgb(50, 100, 0);
+$primary-light: rgb(200, 225, 30);
+$primary-dark: rgb(225,75,150);
+
+$secondary-color: rgb(225,75,150);
+$secondary-light: rgb(250,100,175);
+$secondary-dark: rgb(150,35,100);
+
+$text-color-dark: rgb(33, 33, 33);
+$text-color-light: rgb(245, 245, 245);
+$text-color-muted: rgb(115, 115, 115);
+
+$background-light: rgb(225, 225, 225);
+$background-dark: rgb(66, 66, 66);
+
+$border-color-light: rgb(189, 189, 189);
+$border-color-dark: rgb(95, 95, 95);
+
+$shadow-light: rgba(0, 0, 0, 0.1);
+$shadow-medium: rgba(0, 0, 0, 0.2);
+$shadow-strong: rgba(0, 0, 0, 0.3);
+
+$border-radius-base: 5px;
+$padding-base: 15px;
+$margin-base: 15px;
+$header-height: 80px;
+
+$transition-speed-fast: 0.2s;
+$transition-speed-normal: 0.3s;
+$transition-speed-slow: 0.5s;
+$ease-out-quad: cubic-bezier(0.25, 0.5, 0.5, 0.95);

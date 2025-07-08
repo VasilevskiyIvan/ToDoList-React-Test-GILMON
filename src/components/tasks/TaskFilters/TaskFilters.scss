@@ -1,0 +1,96 @@
+@use "../../../styles/var" as *;
+@use "sass:math";
+
+.task-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $padding-base;
+    padding: $padding-base;
+    margin-bottom: math.div($margin-base, 5) * 10;
+    border: 2px solid $border-color-light;
+    border-radius: $border-radius-base;
+    background-color: white;
+    box-shadow: 0 5px 10px $shadow-light;
+
+    .task-filters__text-field {
+        min-width: 200px;
+        flex: 1;
+
+        .MuiInputLabel-root {
+            color: $text-color-muted;
+        }
+
+        .MuiOutlinedInput-root {
+            fieldset {
+                border-color: $border-color-light;
+            }
+
+            &:hover fieldset {
+                border-color: $primary-color;
+            }
+
+            &.Mui-focused fieldset {
+                border-color: $primary-color;
+            }
+        }
+    }
+
+    .task-filters__form-control {
+        min-width: 180px;
+        flex: 1;
+
+        .MuiInputLabel-root {
+            color: $text-color-muted;
+        }
+
+        .MuiOutlinedInput-root {
+            fieldset {
+                border-color: $border-color-light;
+            }
+
+            &:hover fieldset {
+                border-color: $primary-light;
+            }
+
+            &.Mui-focused fieldset {
+                border-color: $primary-color;
+            }
+        }
+
+        .MuiSelect-icon {
+            color: $text-color-muted;
+        }
+    }
+
+    .task-filters__reset-button {
+        &.MuiButton-outlined {
+            color: $secondary-color;
+            border-color: $secondary-color;
+
+            &:hover {
+                background-color: $secondary-color;
+                color: rgb(255,255,255);
+                border-color: $secondary-dark;
+            }
+        }
+
+        flex-shrink: 0;
+        margin-left: auto;
+    }
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+        gap: $margin-base;
+        padding: math.div($padding-base, 2);
+
+        .task-filters__text-field,
+        .task-filters__form-control {
+            min-width: 100%;
+        }
+
+        .task-filters__reset-button {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+}

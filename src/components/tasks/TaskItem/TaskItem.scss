@@ -1,0 +1,192 @@
+@use "sass:math";
+@use "../../../styles/var" as *;
+
+.task-item {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    flex-direction: column;
+    align-items: stretch;
+    border: 3px solid $border-color-light;
+    border-left: 5px solid $primary-color;
+    padding: $padding-base;
+    margin: 0;
+    border-radius: $border-radius-base;
+    background-color: white;
+    box-shadow: 0 5px 15px $shadow-light;
+    transition: all $transition-speed-normal $ease-out-quad;
+
+    &:hover {
+        transform: scale(1.001);
+        box-shadow: 0 10px 20px $shadow-medium;
+        border-left-color: $primary-light;
+    }
+
+    &__content {
+        flex-grow: 1;
+
+        &>*:not(:last-child) {
+            margin-bottom: 0.5em;
+        }
+
+        .task-item__title {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: $text-color-dark;
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .task-item__description {
+            font-size: 1em;
+            color: $text-color-muted;
+            max-height: 60px;
+            margin: 0;
+            border-bottom: 2px dashed $border-color-light;
+            padding-bottom: 0.75em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .task-item__date-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.9em;
+            color: $text-color-muted;
+            opacity: 0.8;
+
+            .task-item__created-at {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+
+            .task-item__info-button {
+                color: $primary-color;
+                font-size: 1.3em;
+                cursor: pointer;
+                transition: color $transition-speed-fast ease-in-out, transform $transition-speed-fast ease-in-out;
+
+                &:hover {
+                    color: $primary-dark;
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .task-item__end-date {
+            font-size: 0.9em;
+            font-weight: 500;
+            color: $primary-color;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            .MuiSvgIcon-root {
+                font-size: 1em;
+                color: $primary-color;
+            }
+
+            &.task-item__end-date--urgent {
+                color: $secondary-color;
+                font-weight: bold;
+                animation: pulse 1.5s infinite ease-in-out;
+            }
+        }
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: math.div($padding-base, 2);
+        border-top: 2px solid $border-color-light;
+
+        @media (max-width: 600px) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: math.div($padding-base, 2);
+        }
+    }
+
+    .task-item__status-label {
+        .MuiFormControlLabel-label {
+            font-size: 1em;
+            color: $text-color-dark;
+        }
+    }
+
+    .task-item__checkbox {
+        &.MuiCheckbox-root {
+            padding: 5px;
+
+            &:hover {
+                background-color: rgba($primary-color, 0.05);
+            }
+        }
+
+        &.Mui-checked {
+            color: $primary-color !important;
+        }
+    }
+
+    .task-item__delete-button {
+        cursor: pointer;
+        color: $text-color-muted;
+        transition: color $transition-speed-normal ease-in-out, transform $transition-speed-normal $ease-out-quad;
+        font-size: 1.7em;
+
+        &:hover {
+            color: $secondary-color;
+            transform: scale(1.2);
+        }
+    }
+
+    &.task-item--completed {
+        background-color: $background-light;
+        opacity: 0.7;
+        border-left-color: $text-color-muted;
+        pointer-events: auto;
+
+        &:hover {
+            transform: translateY(0);
+            box-shadow: 0 5px 10px $shadow-light;
+            border-left-color: $text-color-muted;
+        }
+
+        .task-item__title,
+        .task-item__description,
+        .task-item__created-at,
+        .task-item__end-date,
+        .task-item__status-label .MuiFormControlLabel-label {
+            text-decoration: line-through;
+            color: $text-color-muted;
+        }
+
+        .task-item__checkbox,
+        .task-item__delete-button,
+        .task-item__info-button {
+            pointer-events: all;
+        }
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.01);
+        opacity: 0.75;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
