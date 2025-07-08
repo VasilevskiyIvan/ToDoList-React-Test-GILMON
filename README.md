@@ -1,12 +1,51 @@
-# React + Vite
+# ToDoList. Тестовое задание GILMON. Василевский
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Этот проект представляет собой интерактивный список дел, разработанный с использованием **React** и собранный с помощью **Vite**.
+Протестировать задиплоеное приложение можно по ссылке https://vasilevskiyivan.github.io/ToDoList-React-Test-GILMON/
 
-Currently, two official plugins are available:
+## О проекте
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ToDoList позволяет легко добавлять, отмечать выполненные и удалять задачи. Приложение работает быстро и плавно, а также использует динамические фильтры, автомотически обновляющие данные при каждом изменении состояний.
 
-## Expanding the ESLint configuration
+## Используемые технологии
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **React:** Библиотека для создания пользовательских интерфейсов.
+* **Vite:** Сборщик проектов.
+* **Material-UI (MUI):** Компонентная библиотека для UI.
+* **Sass:** Препроцессор CSS для более эффективной работы со стилями.
+* **gh-pages:** Для развертывания проекта на GitHub Pages.
+
+## Как запустить проект локально
+
+Для запуска ToDoList на своей локальной машине, выполните следующие шаги:
+
+1.  **Клонируйте репозиторий:**
+    ```bash
+    git clone https://github.com/VasilevskiyIvan/ToDoList-React-Test-GILMON.git
+    ```
+2.  **Перейдите в директорию проекта:**
+    ```bash
+    cd ToDoList-React-Test-GILMON
+    ```
+3.  **Установите зависимости:**
+    ```bash
+    npm install
+    # или
+    yarn install
+    ```
+4.  **Запустите проект в режиме разработки:**
+    ```bash
+    npm run dev
+    # или
+    yarn dev
+    ```
+
+## Демо
+
+Как было сказано ранее, попробовать приложение в действии можно прямо сейчас: https://vasilevskiyivan.github.io/ToDoList-React-Test-GILMON/
+
+## Комментарии к решению
+
+Вход и авторизация в целом реализованы совершенно формально, только для демонстрации и удобства. Можете зарегистрировать любой логин и пароль. Данные о пользователях и их задачах хранятся в localStorage. Совершенно никакой защиты и проверок не предусмотрено, поскольку задание, как я понял, не требовало реализацию серьезных систем авторизации (поскольку для них, вероятно, пришлось бы использовать внешние сервисы по типу Firebase или писать бекенд).
+
+В данной реализации были выполнены все обязательные и дополнительные требования к тестовому заданию. Я постарался не сильно мудрить и использовать только то, что фигурировало в ТЗ, однако сделать приложение достаточно приятным, функциональным и удобным.
