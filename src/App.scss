@@ -42,7 +42,6 @@ body,
             border-radius: $border-radius-base;
             box-shadow: 0 5px 15px $shadow-light;
             margin-top: $margin-base;
-            height: 300px;
         }
 
         .app__no-user-message {
@@ -110,6 +109,16 @@ body,
         border-radius: $border-radius-base;
         box-shadow: 0 5px 5px $shadow-light;
         margin-top: $margin-base;
+    }
+
+    @media (max-width: 567px) {
+        &__main-content {
+            max-width: calc(100% - 40px);
+
+            .app__no-user-message {
+                font-size: 1.1em;
+            }
+        }
     }
 }
 
